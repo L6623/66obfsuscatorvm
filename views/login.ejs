@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Pastefy</title>
+    <style>
+        body { background:#0d0d0d; color:#fff; font-family:sans-serif; text-align:center; padding:100px 20px; }
+        input, button { padding:15px; font-size:18px; margin:10px; border-radius:8px; }
+        button { background:#ffcc00; color:#000; font-weight:bold; }
+    </style>
+</head>
+<body>
+    <h1>🔐 Pastefy Delta</h1>
+    <p>Ingresa la contraseña para crear pastes</p>
+    <form method="POST" action="/login">
+        <input type="password" name="password" placeholder="Contraseña (66ms)" required>
+        <br><button type="submit">Entrar</button>
+    </form>
+</body>
+</html>
