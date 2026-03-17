@@ -4,36 +4,79 @@
     <meta charset="UTF-8">
     <title>Loadstring</title>
     <style>
-        body { background:#0d0d0d; color:#fff; font-family:system-ui; margin:0; height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; }
-        .header { display:flex; align-items:center; gap:15px; margin-bottom:30px; }
-        .icon { font-size:48px; }
-        h1 { color:#ffcc00; margin:0; }
-        .code-box { background:#1a1a1a; border:1px solid #444; padding:25px; max-width:820px; width:90%; border-radius:12px; position:relative; box-shadow:0 0 30px rgba(0,0,0,0.8); }
-        pre { color:#00ffaa; font-family:monospace; white-space:pre-wrap; overflow:auto; max-height:420px; margin:0; }
-        .copy-btn { position:absolute; top:15px; right:15px; background:#333; color:#fff; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; font-weight:bold; }
-        .footer { margin-top:30px; color:#666; font-size:14px; }
+        body { 
+            background:#0d0d0d; 
+            color:#fff; 
+            font-family:system-ui, sans-serif; 
+            margin:0; 
+            height:100vh; 
+            display:flex; 
+            flex-direction:column; 
+            align-items:center; 
+            justify-content:center; 
+            text-align:center;
+        }
+        .header { 
+            display:flex; 
+            align-items:center; 
+            gap:15px; 
+            margin-bottom:30px; 
+        }
+        .icon { font-size:60px; }
+        h1 { 
+            color:#ffcc00; 
+            margin:0; 
+            font-size:3rem;
+        }
+        .protect-box {
+            background:#1a1a1a;
+            border:2px solid #444;
+            padding:40px 60px;
+            max-width:700px;
+            width:85%;
+            border-radius:12px;
+            box-shadow:0 0 40px rgba(0,0,0,0.9);
+        }
+        .message {
+            color:#ff5555;
+            font-size:1.6rem;
+            font-weight:bold;
+            margin:20px 0;
+            text-transform:uppercase;
+            letter-spacing:2px;
+        }
+        .extra {
+            color:#888;
+            font-size:1.1rem;
+            margin-top:30px;
+        }
+        .footer {
+            margin-top:50px;
+            color:#555;
+            font-size:0.9rem;
+        }
     </style>
 </head>
 <body>
     <div class="header">
-        <span class="icon">📘</span>
+        <span class="icon">🔒</span>
         <h1>Loadstring</h1>
     </div>
 
-    <div class="code-box">
-        <pre><code><%- paste.content %></code></pre>
-        <button class="copy-btn" onclick="copyContent()">Copy</button>
+    <div class="protect-box">
+        <div class="message">
+            This File Was Protect By luaobf
+        </div>
+        <p style="color:#aaa; font-size:1.2rem;">
+            Protected content • No visible source in browser
+        </p>
+        <div class="extra">
+            Use in executor only → game:HttpGet for raw access
+        </div>
     </div>
 
     <div class="footer">
-        Contents can not be displayed on browser • <%= host %>
+        Contents can not be displayed on browser • https://<%= host.split('//')[1] || host %>
     </div>
-
-<script>
-function copyContent() {
-    const text = document.querySelector('pre code').innerText;
-    navigator.clipboard.writeText(text).then(() => alert('✅ Contenido copiado!'));
-}
-</script>
 </body>
 </html>
