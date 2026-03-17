@@ -1,82 +1,53 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Loadstring</title>
+    <title>Protected Loadstring</title>
     <style>
-        body { 
-            background:#0d0d0d; 
-            color:#fff; 
-            font-family:system-ui, sans-serif; 
-            margin:0; 
-            height:100vh; 
-            display:flex; 
-            flex-direction:column; 
-            align-items:center; 
-            justify-content:center; 
-            text-align:center;
+        body {
+            margin: 0;
+            height: 100vh;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            font-family: system-ui, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
-        .header { 
-            display:flex; 
-            align-items:center; 
-            gap:15px; 
-            margin-bottom:30px; 
+        .lock { font-size: 120px; margin-bottom: 20px; }
+        h1 { color: #ffcc00; font-size: 3.5rem; margin: 10px 0; }
+        .msg {
+            background: #1c1c1c;
+            border: 2px solid #444;
+            padding: 40px 60px;
+            border-radius: 16px;
+            max-width: 700px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.9);
         }
-        .icon { font-size:60px; }
-        h1 { 
-            color:#ffcc00; 
-            margin:0; 
-            font-size:3rem;
+        .big-text {
+            color: #ff4444;
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin: 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
         }
-        .protect-box {
-            background:#1a1a1a;
-            border:2px solid #444;
-            padding:40px 60px;
-            max-width:700px;
-            width:85%;
-            border-radius:12px;
-            box-shadow:0 0 40px rgba(0,0,0,0.9);
-        }
-        .message {
-            color:#ff5555;
-            font-size:1.6rem;
-            font-weight:bold;
-            margin:20px 0;
-            text-transform:uppercase;
-            letter-spacing:2px;
-        }
-        .extra {
-            color:#888;
-            font-size:1.1rem;
-            margin-top:30px;
-        }
-        .footer {
-            margin-top:50px;
-            color:#555;
-            font-size:0.9rem;
-        }
+        .small { color: #888; font-size: 1.3rem; margin-top: 30px; }
+        footer { margin-top: 60px; color: #555; font-size: 1rem; }
     </style>
 </head>
 <body>
-    <div class="header">
-        <span class="icon">🔒</span>
-        <h1>Loadstring</h1>
+    <div class="lock">🔒</div>
+    <h1>Loadstring</h1>
+    
+    <div class="msg">
+        <div class="big-text">This File Was Protect By luaobf</div>
+        <div class="small">Protected content — Browser view blocked</div>
+        <div class="small" style="margin-top:25px;">Use only in executor with HttpGet</div>
     </div>
 
-    <div class="protect-box">
-        <div class="message">
-            This File Was Protect By luaobf
-        </div>
-        <p style="color:#aaa; font-size:1.2rem;">
-            Protected content • No visible source in browser
-        </p>
-        <div class="extra">
-            Use in executor only → game:HttpGet for raw access
-        </div>
-    </div>
-
-    <div class="footer">
-        Contents can not be displayed on browser • https://<%= host.split('//')[1] || host %>
-    </div>
+    <footer>Contents cannot be displayed in browser • luaobf protected</footer>
 </body>
 </html>
