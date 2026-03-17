@@ -28,17 +28,18 @@
         <li>
             <strong>ID:</strong> <%= p.id %><br>
             <strong>Creado:</strong> <%= p.created.toLocaleString() %><br><br>
-            <a href="/paste/<%= p.id %>" style="color:#00ffaa;">Ver en navegador (como la foto)</a> | 
-            <a href="/raw/<%= p.id %>" style="color:#ffcc00;" target="_blank">Raw para Delta</a><br>
-            <button onclick="copyRaw('<%= p.id %>')">Copiar URL Raw</button>
+            <a href="/raw/<%= p.id %>" style="color:#00ffaa;" target="_blank">Ver protector (navegador)</a> | 
+            <button onclick="copyUrl('<%= p.id %>')">Copiar URL para Delta</button><br>
+            <small>Usa en Delta: loadstring(game:HttpGet(URL))()</small>
         </li>
     <% }); %>
     </ul>
 </div>
 
 <script>
-function copyRaw(id) {
-    navigator.clipboard.writeText(location.origin + '/raw/' + id).then(() => alert('✅ URL Raw copiada!'));
+function copyUrl(id) {
+    const url = location.origin + '/raw/' + id;
+    navigator.clipboard.writeText(url).then(() => alert('✅ URL copiada para Delta!'));
 }
 </script>
 </body>
