@@ -60,7 +60,7 @@ app.get('/raw/:id', (req, res) => {
         res.set('Content-Type', 'text/plain');
         const protectedScript = 
             `-- This File Was Protect By luaobf 🔒\n` +
-            `-- Protected • No abras en navegador / no copies manual\n` +
+            `-- Protected • VM / Safety\n` +
             `-- Usa: loadstring(game:HttpGet("\( {req.protocol}:// \){req.get('host')}/raw/${paste.id}"))()\n` +
             `-- ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯\n\n` +
             paste.content;
